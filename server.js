@@ -25,13 +25,6 @@ mongoose.connect(
   }
 );
 
-
-// app.get("/", function(req,res){
-//   axios.get(borroWoofUrl).then(function (response){
-
-
-//   });
-// }
 // Start the API server
 app.listen(PORT, () =>
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
