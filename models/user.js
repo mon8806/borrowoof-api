@@ -5,9 +5,10 @@ const Schema = mongoose.Schema;
 //creating a collection
 const userSchema = new Schema({
   name: { type: String, required: true },
-  email: { type: String, required: true },
+  email: { type: String, required: true, unique: true},
   password: { type: String, required: true },
   zipcode: { type: Number, required: true },
+  aboutMe: {type: String, required: true},
   image: { type: String}
 });
 
@@ -16,3 +17,5 @@ const user = mongoose.model("User", userSchema);
 
 //exporting book component
 module.exports = user;
+
+

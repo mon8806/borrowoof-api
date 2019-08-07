@@ -1,20 +1,23 @@
 //requiring modules
 const express = require("express");
+const router = require("express").Router();
+
+var cors = require('cors')
+
+const app = express();
 
 const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
+//const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 
-const borroWoofUrl = "https://borrowoof.herokuapp.com/"
 
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(cors())
 
 
-// Add routes, both API and view
-app.use(routes);
+//Loads up route
+app.use(require('./routes/user'));
 
 // Connect to the Mongo DB
 mongoose.connect(

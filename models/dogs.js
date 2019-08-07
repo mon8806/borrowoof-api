@@ -4,12 +4,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 //creating a callection
 const dogSchema = new Schema({
+  onwerId: { type: String, required: true},
   name: { type: String, required: true },
   gender: { type: String, required: true },
   breed: { type: String, required: true },
   activityLevel: { type: String, required: true },
   goodWith: { type: String, required: true },
   availability: { type: String, required: true },
+  aboutMe: { type: String, required: true},
   image: { type: String, required: true}
 });
 
