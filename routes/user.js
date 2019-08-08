@@ -1,6 +1,7 @@
 var bodyParser = require('body-parser')
 const jsonParser = bodyParser.json()
 const User = require('../models/user')
+const Dogs = require('../models/dogs')
 
 const userRouter = module.exports =  require("express").Router();
 
@@ -30,6 +31,8 @@ userRouter.post('/api/login', jsonParser, (req, res)=>{
       .catch(err => res.status(422).json(err));
   }
 )
+
+
 // function(req, res) {
 //     db.User.find(req.query)
 //       .then(dbUser => res.json(dbUser))

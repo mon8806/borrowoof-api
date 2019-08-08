@@ -18,6 +18,7 @@ app.use(cors())
 
 //Loads up route
 app.use(require('./routes/user'));
+app.use(require('./routes/dog'));
 
 // Connect to the Mongo DB
 mongoose.connect(
