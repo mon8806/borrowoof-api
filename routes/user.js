@@ -1,7 +1,7 @@
 var bodyParser = require('body-parser')
 const jsonParser = bodyParser.json()
 const User = require('../models/user')
-const Dogs = require('../models/dogs')
+
 
 const userRouter = module.exports =  require("express").Router();
 
@@ -32,9 +32,23 @@ userRouter.post('/api/login', jsonParser, (req, res)=>{
   }
 )
 
+userRouter.get('/api/user/all', jsonParser, (req, res)=>{
+    console.log(req.body)
+    User.find({})
+      .then(dbUser => {
+            dbUser.password = ''
+            res.json(dbUser)
+        })
+      .catch(err => res.status(422).json(err));
+  }
+)
 
-// function(req, res) {
-//     db.User.find(req.query)
-//       .then(dbUser => res.json(dbUser))
-//       .catch(err => res.status(422).json(err));
-//   }
+userRouter.get('/api/user/remove-all', jsonParser, (req, res)=>{
+    console.log(req.body)
+    User.remove({})
+      .then(result => {
+            res.json({})
+        })
+      .catch(err => res.status(422).json(err));
+  }
+)

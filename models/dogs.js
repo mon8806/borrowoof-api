@@ -4,14 +4,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 //creating a callection
 const dogSchema = new Schema({
-  // ownerId: { type: String, required: true},
+  ownerId: { type: String, required: true},
   name: { type: String, required: true },
   gender: { type: String, required: true },
   breed: { type: String, required: true },
   activityLevel: { type: String, required: true },
-  goodWithPeople:  {type: String, required: true },
-  goodWithKids: { type: String, required: true },
-  goodWithOtherDogs: { type: String, required: true },
+  goodWithPeople:  {type: String },
+  goodWithKids: { type: String},
+  goodWithOtherDogs: { type: String},
   availableMonday : {type: String},
   availableTuesday : { type: String},
   availableWednesday : { type: String},
@@ -19,8 +19,8 @@ const dogSchema = new Schema({
   availableFriday : { type: String},
   availableSaturday : { type: String},
   availableSunday : { type: String},
-  aboutMe: { type: String, required: true},
-  // image: { type: String, required: true}
+  aboutMe: { type: String},
+  image: { type: String}
 });
 
 //tells mongoose to use to scheme for book collection

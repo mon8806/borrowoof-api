@@ -1,6 +1,10 @@
 //requiring modules
 const express = require("express");
 const router = require("express").Router();
+const formData = require('express-form-data')
+
+require('dotenv').config()
+
 
 var cors = require('cors')
 
@@ -14,11 +18,14 @@ const PORT = process.env.PORT || 3001;
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
+app.use(formData.parse())
+
 
 
 //Loads up route
 app.use(require('./routes/user'));
 app.use(require('./routes/dog'));
+app.use(require('./routes/image'))
 
 // Connect to the Mongo DB
 mongoose.connect(
