@@ -43,7 +43,7 @@ userRouter.get('/api/user/all', jsonParser, (req, res)=>{
   }
 )
 
-userRouter.get('/api/user/remove-all', jsonParser, (req, res)=>{
+userRouter.get('/api/user-reset', jsonParser, (req, res)=>{
     console.log(req.body)
     User.remove({})
       .then(result => {

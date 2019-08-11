@@ -26,6 +26,7 @@ app.use(formData.parse())
 app.use(require('./routes/user'));
 app.use(require('./routes/dog'));
 app.use(require('./routes/image'))
+app.use(require('./routes/booking'))
 
 // Connect to the Mongo DB
 mongoose.connect(
