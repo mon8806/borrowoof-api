@@ -4,10 +4,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 //creating a collection
 const bookingSchema = new Schema({
-  bookingId: { type: String, required: true },
   petId: { type: String, required: true },
+  ownerId: { type: String, required: true},
   userId: { type: String, required: true },
-  date: { type: Number, required: true }
+  image: { type: String, required: true},
+  name: { type: String, required: true },
 });
 
 //tells mongoose to use to scheme for book collection

@@ -34,7 +34,7 @@ app.use(cors())
 
 // pass the authorization checker middleware
 const authCheckMiddleware = require('./middleware/auth-check');
-app.use('/api/booking', authCheckMiddleware);
+//app.use('/api/booking', authCheckMiddleware);
 // app.use('/api/signup', authCheckMiddleware);
 //app.use('/api/login', authCheckMiddleware);
 
