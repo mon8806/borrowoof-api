@@ -14,6 +14,12 @@ cloudinary.config({
 
 
 imageRouter.post('/api/image-upload', (req, res) => {
+  //console.log('jhvfeshvkjhasvfasfvhasfvasvavfhjasvfhj',req.files);
+  console.log('jhvfeshvkjhasvfasfvhasfvasvavfhjasvfhj');
+  console.log(req.body);
+  console.log(req.body);
+  console.log(req.body);
+  console.log('jhvfeshvkjhasvfasfvhasfvasvavfhjasvfhj');
     const values = Object.values(req.files)
     const promises = values.map(image => cloudinary.uploader.upload(image.path))
 
