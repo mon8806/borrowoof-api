@@ -17,6 +17,7 @@ mongoose.connect(
   }
 );
 
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -31,7 +32,7 @@ passport.use('local-login', localLoginStrategy);
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
-
+app.use(formData.parse())
 // pass the authorization checker middleware
 const authCheckMiddleware = require('./middleware/auth-check');
 //app.use('/api/booking', authCheckMiddleware);
